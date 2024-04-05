@@ -1,4 +1,4 @@
-# pip install pycryptodome
+# https://pypi.org/project/pycryptodome/
 from Crypto.Util.number import getPrime, bytes_to_long, long_to_bytes
 
 p = getPrime(512)
