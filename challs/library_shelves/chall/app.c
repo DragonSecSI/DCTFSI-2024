@@ -11,8 +11,11 @@ void setup() {
 }
 
 void hospital() {
+    asm volatile(".globl win");
+    asm volatile("win:");
     puts("How it the hell did I end up in hospital?!");
     system("/bin/sh");
+    exit(0);
 }
 
 void login() {
