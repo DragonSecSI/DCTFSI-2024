@@ -5,12 +5,8 @@ category: "Crypto"
 description: |
   Every CTF needs an RSA challenge.
 
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
+value: 100
+type: "standard"
 
 files:
   - "chall/output.txt"

@@ -5,12 +5,8 @@ category: "Crypto"
 description: |
   Getting tired of using One Time Pad? We present to you a revolutionary new cipher! It's called Two Time Pad.
 
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
+value: 50
+type: "standard"
 
 files:
   - "chall/ciphertext.txt"

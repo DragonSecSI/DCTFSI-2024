@@ -4,16 +4,13 @@ category: "PWN"
 
 description: |
   Please return books back to the ROP chain section, or this librarian will poison you with tcache.
-connection_info: nc pwn.dctf.si 1337
+connection_info: nc pwn.dctf.si 13372
 
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
+value: 150
+type: "standard"
 
 files:
+  - "Dockerfile"
   - "chall/app"
 flags:
   - "dctf{R0P_Qu1c_83f0r3_118r4r14n_4Rr1v35}"

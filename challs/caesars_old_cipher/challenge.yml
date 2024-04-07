@@ -5,12 +5,8 @@ category: "Crypto"
 description: |
   Have you heard of the Emperor's new clothes? But since we have a Ceasar, he has a cipher. And it's old...
 
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
+value: 10
+type: "standard"
 
 files:
   - "chall/ciphertext.txt"

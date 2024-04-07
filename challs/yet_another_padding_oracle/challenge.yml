@@ -5,14 +5,10 @@ category: "Crypto"
 description: |
   Hope you are not tired of padding oracles yet.
 
-connection_info: TODO
+connection_info: nc pwn.dctf.si 13370
 
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
+value: 150
+type: "standard"
 
 files:
   - "chall/chall.py"
