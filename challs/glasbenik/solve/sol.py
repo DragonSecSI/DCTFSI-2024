@@ -2,7 +2,16 @@
 
 import requests
 import re
-url = "http://localhost:3000/"
+import sys
+
+if len(sys.argv) != 2:
+    print(f"Usage: {sys.argv[0]} <base_url>")
+    sys.exit(1)
+import urllib.parse
+url = sys.argv[1]
+url = urllib.parse.urlparse(url)
+url = f"{url.scheme}://{url.netloc}/"
+
 path = "api/search"
 
 with requests.Session() as s:
