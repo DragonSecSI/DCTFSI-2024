@@ -1,0 +1,21 @@
+name: "Gambler"
+author: "DragonSec SI"
+category: "PWN"
+
+description: |
+  Gamble all of your belongings
+connection_info: nc pwn.dctf.si 1337
+
+value: 100
+type: "standard"
+
+files:
+  - "chall/app"
+flags:
+  - "dctf{g4mb1ers_qu1t_b3f0r3_7h3y_w1n_b1g}"
+tags:
+  - "pwn"
+  - "medium"
+
+state: "visible"
+version: "0.1"
