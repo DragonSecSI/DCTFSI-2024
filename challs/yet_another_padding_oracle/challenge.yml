@@ -1,0 +1,26 @@
+name: "Yet Another Padding Oracle"
+author: "Bumblebee, zeski"
+category: "Crypto"
+
+description: |
+  Hope you are not tired of padding oracles yet.
+
+connection_info: TODO
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "chall/chall.py"
+flags:
+  - "dctf{did_you_think_you_would_get_away_with_using_a_simple_padbuster}"
+tags:
+  - "crypto"
+  - "hard"
+
+state: "visible"
+version: "0.1"

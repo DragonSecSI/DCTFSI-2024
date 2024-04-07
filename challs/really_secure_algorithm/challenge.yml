@@ -1,0 +1,25 @@
+name: "Really Secure Algorithm"
+author: "Bumblebee, zeski"
+category: "Crypto"
+
+description: |
+  Every CTF needs an RSA challenge.
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "chall/output.txt"
+  - "chall/chall.py"
+flags:
+  - "dctf{e_is_still_too_small_for_this_message}"
+tags:
+  - "crypto"
+  - "medium"
+
+state: "visible"
+version: "0.1"

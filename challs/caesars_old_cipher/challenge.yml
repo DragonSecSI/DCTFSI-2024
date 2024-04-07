@@ -1,0 +1,24 @@
+name: "Caesar's Old Cipher"
+author: "Bumblebee, zeski"
+category: "Crypto"
+
+description: |
+  Have you heard of the Emperor's new clothes? But since we have a Ceasar, he has a cipher. And it's old...
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "chall/ciphertext.txt"
+flags:
+  - "dctf{The_Caesar_has_no_security}"
+tags:
+  - "crypto"
+  - "baby"
+
+state: "visible"
+version: "0.1"

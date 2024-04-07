@@ -1,0 +1,25 @@
+name: "Two Time Pad"
+author: "Bumblebee, zeski"
+category: "Crypto"
+
+description: |
+  Getting tired of using One Time Pad? We present to you a revolutionary new cipher! It's called Two Time Pad.
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "chall/ciphertext.txt"
+  - "chall/chall.py"
+flags:
+  - "dctf{m4yb3_th3r3_1s_4_r34s0n_tw0_t1m3_p4d_1s_4_b4d_1d34}"
+tags:
+  - "crypto"
+  - "easy"
+
+state: "visible"
+version: "0.1"
