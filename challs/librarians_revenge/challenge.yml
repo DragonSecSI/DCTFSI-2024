@@ -1,0 +1,25 @@
+name: "Librarian's Revenge"
+author: "AlwaysGuilty"
+category: "PWN"
+
+description: |
+  Please return books back to the ROP chain section, or this librarian will poison you with tcache.
+connection_info: nc pwn.dctf.si 1337
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "chall/app"
+flags:
+  - "dctf{R0P_Qu1c_83f0r3_118r4r14n_4Rr1v35}"
+tags:
+  - "pwn"
+  - "hard"
+
+state: "visible"
+version: "0.1"
