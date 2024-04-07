@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musix</title>
+    <link href="/public/css/styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-white min-h-full">
+    <div class="text-center items-center flex flex-col gap-6">
+      <nav class="bg-slate-400 dark:bg-slate-400 dark:text-slate-900 w-full py-3 justify-end ms-auto flex flex-row my-3">
+        <div class="mr-5 flex flex-row gap-2">
+          <p>Search</p>
+          <input id="search" type="text" class="bg-inherit text-inherit border-white border" placeholder="Search ">
+        </div>
+        <a href="#" class="mr-5" >About</a>
+      </nav>
+      <h1 class="text-3xl">MusiX Library</h1>
+      <div class="space-y-2 justify-items-center flex flex-col gap-5">
+        <% for (let i = 0; i < artists.length; i++) { %>
+          <a class="no-underline " href="/artist/<%= artists[i].id %>">
+            <div class="artist">
+              <h2 class="text-lg"><%= artists[i].name %> (No. <%= artists[i].rank %>)</h2>
+              <img src="<%= artists[i].image  %>" alt="<%= artists[i].name %>'s thumbnail" class="size-48" />
+            </div>
+          </a>
+        <% } %>
+      </div>
+    </div>
+    <script>
+      const searchBar = document.getElementById('search');
+      function getNewArtists(q){ 
+        q = encodeURIComponent(q);
+        fetch(`/api/search?q=${q}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(res => res.json())
+        .then(artists => {
+          const artistContainer = document.querySelector('.space-y-2');
+          artistContainer.innerHTML = '';
+          artists.forEach(artist => {
+            const artistDiv = document.createElement('a');
+            artistDiv.classList.add('no-underline');
+            artistDiv.href = `/artist/${artist.id}`;
+            artistDiv.innerHTML = `
+              <div>
+                <h2 class="text-lg">${artist.name} (No. ${artist.rank})</h2>
+                <img src="${artist.image}" alt="${artist.name}'s thumbnail" class="size-48" />
+              </div>
+            `;
+            artistContainer.appendChild(artistDiv);
+          });
+        });
+      }
+      // Add debounce
+      let t;
+      searchBar.addEventListener('input', (e) => {
+        const val = e.target.value;
+        if(t) clearTimeout(t);
+        t = setTimeout(getNewArtists, 200, val);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  musix:
+    image: musix
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # container name resolution
+      MYSQL_HOST: database 
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+
+  database:
+    image: mysql:5.7
+    env_file:
+      - .env
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d

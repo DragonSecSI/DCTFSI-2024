@@ -1,0 +1,25 @@
+name: "MusiX Player"
+author: "aljazmedic"
+category: "Web"
+
+description: |
+  Built an app that will overthrow Spotify!
+connection_info: https://template.web.dctf.si
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "dist.tar.gz"
+flags:
+  - "dctf{ju57_3n4bl3_gl0b4l_m4tch1ng_r3g3x_f83a2d}"
+tags:
+  - "web"
+  - "easy"
+
+state: "visible"
+version: "1.0"
