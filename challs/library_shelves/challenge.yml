@@ -1,0 +1,25 @@
+name: "Library Shelves"
+author: "AlwaysGuilty"
+category: "PWN"
+
+description: |
+  Can you read past the bookshelf?
+connection_info: nc pwn.dctf.si 1337
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "chall/app"
+flags:
+  - "dctf{Ov3rfl0w_Th3_B0Ok5h31f_Buff3r_t0_W1n!}"
+tags:
+  - "pwn"
+  - "medium"
+
+state: "visible"
+version: "0.1"
