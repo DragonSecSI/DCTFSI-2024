@@ -4,12 +4,13 @@ category: "PWN"
 
 description: |
   Gamble all of your belongings
-connection_info: nc pwn.dctf.si 1337
+connection_info: nc pwn.dctf.si 13373
 
 value: 50
 type: "standard"
 
 files:
+  - "Dockerfile"
   - "chall/app"
 flags:
   - "dctf{g4mb1ers_qu1t_b3f0r3_7h3y_w1n_b1g}"
