@@ -1,0 +1,23 @@
+name: "Gnisrever"
+author: "Riggle"
+category: Rev
+
+description: |
+  Reverse the binary!
+value: 100
+type: "standard"
+
+files: 
+  - gnisrever.tar.gz
+
+flags:
+  - dctf{gn1sr3ver_3v0l_eruS_I}
+
+tags:
+  - rev
+  - encryption
+  - easy
+
+state: visible
+
+version: "0.1"
