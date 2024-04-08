@@ -13,7 +13,7 @@ description: |
   Description
   For each file given, GNU...
 
-value: 100
+value: 50
 type: "standard"
 
 files: 
