@@ -1,13 +1,17 @@
-FROM ubuntu:20.04
-RUN RUN export DEBIAN_FRONTEND=noninteractive \
-    && apt-get update \
-    && apt-get install -y socat
+FROM ubuntu:22.04
 
-RUN groupadd pilot
-RUN useradd pilot --gid pilot
+EXPOSE 1337
 
-COPY ./app /app
-WORKDIR /app
-EXPOSE 5555
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get -y update && \
+    apt-get -y install socat coreutils
 
-ENTRYPOINT [ "bash", "start.sh" ]
+COPY app/flag.txt /
+COPY app/chall /
+
+RUN chmod 555 /chall && \
+    chmod 444 /flag.txt
+
+CMD socat -T 30 \
+    TCP-LISTEN:1337,nodelay,reuseaddr,fork \
+    EXEC:"stdbuf -i0 -o0 -e0 /chall"

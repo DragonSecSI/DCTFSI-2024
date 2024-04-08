@@ -8,7 +8,7 @@ value: 10
 type: "standard"
 
 files: 
-  - chall.c app/chall
+  - app/chall
 
 flags:
   - dctf{1nteg3r_0v3rflow_gaming}

@@ -15,7 +15,6 @@ flags:
 
 tags:
   - rev
-  - encryption
   - medium
 
 state: visible
