@@ -1,13 +1,16 @@
 name: "Integer"
 author: "Riggle"
-category: Pwn
+category: PWN
 
 description: |
   This is impossible! How do they expect me to produce a negative from two positives??
+connection_info: nc pwn.dctf.si 13374
+
 value: 10
 type: "standard"
 
 files: 
+  - Dockerfile
   - app/chall
 
 flags:

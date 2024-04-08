@@ -6,7 +6,7 @@ description: |
   Gamble all of your belongings
 connection_info: nc pwn.dctf.si 13373
 
-value: 50
+value: 100
 type: "standard"
 
 files:
@@ -16,7 +16,7 @@ flags:
   - "dctf{g4mb1ers_qu1t_b3f0r3_7h3y_w1n_b1g}"
 tags:
   - "pwn"
-  - "easy"
+  - "medium"
 
 state: "visible"
 version: "0.1"

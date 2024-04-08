@@ -17,7 +17,7 @@ resource "kubernetes_ingress_v1" "ingress" {
             service {
               name = kubernetes_service_v1.service.metadata.0.name
               port {
-                number = 8000
+                number = 3000
               }
             }
           }
@@ -46,8 +46,8 @@ resource "kubernetes_service_v1" "service" {
     }
 
     port {
-      port        = 8000
-      target_port = 8000
+      port        = 3000
+      target_port = 3000
     }
 
     type = "ClusterIP"
@@ -99,6 +99,27 @@ resource "kubernetes_deployment_v1" "deployment" {
                 "NET_BIND_SERVICE",
               ]
             }
+          }
+          
+          env {
+            name  = "MYSQL_HOST"
+            value = kubernetes_service_v1.db_service.metadata.0.name
+          }
+          env {
+            name  = "MYSQL_DATABASE"
+            value = "musixdb"
+          }
+          env {
+            name  = "MYSQL_USER"
+            value = "musix"
+          }
+          env {
+            name  = "MYSQL_ROOT_PASSWORD"
+            value = "Massager-Trailing-Playing4-Outpost-Delicate-Wieldable"
+          }
+          env {
+            name  = "MYSQL_PASSWORD"
+            value = "Partly-Habitual-Pulp2-Dry-Bobtail-Operate"
           }
 
           resources {

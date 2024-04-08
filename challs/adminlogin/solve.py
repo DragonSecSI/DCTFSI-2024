@@ -1,6 +1,7 @@
 from pwn import *
 
-p = process("./app/chall")
+#p = process("./app/chall")
+p = remote("pwn.dctf.si", 13371)
 #pid = gdb.attach(p, gdbscript="b* vuln")
 
 mal = b'admin\0'

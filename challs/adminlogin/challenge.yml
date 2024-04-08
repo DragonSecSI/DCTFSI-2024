@@ -1,14 +1,16 @@
-name: "Gnisrever"
+name: "Admin Login"
 author: "Riggle"
-category: Rev
+category: PWN
 
 description: |
   You're not an admin, are you? No? Then scram!
+connection_info: nc pwn.dctf.si 13371
 
 value: 50
 type: "standard"
 
 files: 
+  - Dockerfile
   - adminlogin.tar.gz
 
 flags:

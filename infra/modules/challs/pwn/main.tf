@@ -44,6 +44,10 @@ resource "kubernetes_deployment" "deployment" {
       }
 
       spec {
+        node_selector = {
+          agentpool = "challs"
+        }
+
         container {
           image = "${var.k8s_image}"
           name  = "${var.name}"

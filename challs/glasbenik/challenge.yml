@@ -4,14 +4,10 @@ category: "Web"
 
 description: |
   Built an app that will overthrow Spotify!
-connection_info: https://template.web.dctf.si
+connection_info: https://musix.dctf.si
 
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
+value: 50
+type: "standard"
 
 files:
   - "dist.tar.gz"
