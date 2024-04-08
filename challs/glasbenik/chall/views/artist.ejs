@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musix</title>
+    <link href="/public/css/styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-white min-h-full">
+    <div class="
+    text-center items-center flex flex-col gap-6">
+      <nav class="bg-slate-400 dark:bg-slate-400 dark:text-slate-900 w-full py-3 justify-end ms-auto flex my-3">
+        <a href="/" class="mr-5" >Home</a>
+        <a href="#" class="mr-5" >About</a>
+      </nav>
+      <h1 class="text-3xl">MusiX Library</h1>
+      <h2 class="text-2xl">Artist: <%= artist.name %></h2>
+      <div>
+        <img src="<%= artist.image %>" alt="<%= artist.name %>'s thumbnail" class="size-48" />
+      </div>
+      <div>
+        <% for (let i = 0; i < works.length; i++) { %>
+          <div class="flex flex-row content-center justify-items-center items-center gap-7">
+            <h2 class="text-lg"><%= works[i].title %></h2>
+            <div>
+              <audio controls>
+                <source src="<%= works[i].sample %>" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    <script defer>
+      const audio = document.querySelector('audio');
+      const topDiv = document.querySelector('body');
+      console.log(topDiv);
+      audio.onplay = function() {
+        setTimeout(() => {
+          // Set background image to Rick Astley
+          topDiv.style.backgroundImage = 'url("/public/img/Rick-Astley-Never-Gonna-Give-You-Up.webp") ';
+          topDiv.style.backgroundSize = 'cover';
+          setTimeout(alert, 100, 'We ain\'t ever gonna give you up!\nAll the songs play this one.');
+        }, 600);
+      };
+    </script>
+  </body>
+</html>
