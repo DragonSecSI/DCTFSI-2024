@@ -1,0 +1,19 @@
+name: "Pack the Flag"
+author: "null-cell"
+category: "Web"
+
+description: |
+  Don't forget to pack the flag before you travel to the mooooon!🌔 The secrets lie in the dark side.
+connection_info: https://template.web.dctf.si
+
+value: 50
+type: "static"
+
+flags:
+  - "DCTF{p4ck3d_7h3_fl4g_10_7h3_m00n}"
+tags:
+  - "web"
+  - "baby"
+
+state: "visible"
+version: "1.0"

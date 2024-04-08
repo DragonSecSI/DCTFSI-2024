@@ -1,0 +1,66 @@
+body {
+    background-color: #0a0f0d; /* Deep space black */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #c0c2c4; /* Moon surface gray */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff; /* Bright moon white */
+    font-size: 2.5rem;
+}
+
+p {
+    color: #a5a5a6; /* Astronaut suit gray */
+}
+
+ul#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#task-list li {
+    background-color: #1c2023; /* Dark side of the moon gray */
+    border-bottom: 1px solid #343a40; /* Separation line like the moon's surface cracks */
+    color: #c0c2c4; /* Text mimicking the moon's surface */
+    margin: 10px 0;
+    padding: 10px;
+    text-align: left;
+}
+
+form#task-form {
+    margin-top: 20px;
+}
+
+form#task-form input[type="text"], form#task-form button {
+    border: 1px solid #343a40; /* Futuristic gadget border */
+    background-color: #1c2023; /* Dark side of the moon gray */
+    color: #c0c2c4; /* Moon rock gray */
+    padding: 10px;
+    font-size: 1rem;
+}
+
+form#task-form button {
+    cursor: pointer;
+}
+
+form#task-form input[type="text"] {
+    width: 70%;
+    margin-right: 10px;
+}
+
+form#task-form button:hover {
+    background-color: #2a2e33; /* A slightly lighter gray for hover effect */
+    border-color: #c0c2c4; /* Highlight border */
+}
+
+/* Extra styles for a bit of moon magic */
+form#task-form button {
+    transition: background-color 0.3s ease;
+}
+
+ul#task-list li:hover {
+    background-color: #2a2e33; /* Hovering over tasks gives a lighter moon surface effect */
+}
