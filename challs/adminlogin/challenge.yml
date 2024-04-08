@@ -1,0 +1,23 @@
+name: "Gnisrever"
+author: "Riggle"
+category: Rev
+
+description: |
+  You're not an admin, are you? No? Then scram!
+
+value: 100
+type: "standard"
+
+files: 
+  - adminlogin.tar.gz
+
+flags:
+  - dctf{h0w_the_h3ll_D1d_you_get_H3r3???}
+
+tags:
+  - pwn
+  - easy
+
+state: visible
+
+version: "0.1"
