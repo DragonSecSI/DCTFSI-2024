@@ -1,0 +1,1 @@
+from base64 import b85decode as d;b,i,p,e,s=bytes,input,print,str.encode,bytes.strip;x=s(e(i("What's the flag? ")));FLAG=b'gug]1ouT\x86o\x86^c5_FsgqHg}d3kf\x83qM\x87tZd';f=d(b(x-13 for x in FLAG[::-1]));p("Correct!"if f==x else"Nope!")

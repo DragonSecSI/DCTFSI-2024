@@ -1,0 +1,21 @@
+name: "Obfpyscation"
+author: "Riggle"
+category: Rev
+
+description: |
+  Reversing doesn't always include a binary file
+value: 10
+type: "standard"
+
+files: 
+  - chall.py
+
+flags:
+  - dctf{r3vers1ng_can_b3_fun}
+
+tags:
+  - rev
+
+state: visible
+
+version: "0.1"
