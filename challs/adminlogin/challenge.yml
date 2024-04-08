@@ -5,7 +5,7 @@ category: Rev
 description: |
   You're not an admin, are you? No? Then scram!
 
-value: 100
+value: 50
 type: "standard"
 
 files: 
