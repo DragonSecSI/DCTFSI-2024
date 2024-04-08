@@ -4,7 +4,7 @@ category: Rev
 
 description: |
   Reverse the binary!
-value: 100
+value: 200
 type: "standard"
 
 files: 
@@ -16,7 +16,7 @@ flags:
 tags:
   - rev
   - encryption
-  - easy
+  - medium
 
 state: visible
 
