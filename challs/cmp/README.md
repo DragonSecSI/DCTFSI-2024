@@ -1,0 +1,3 @@
+# CMP
+
+Run `strings` lol

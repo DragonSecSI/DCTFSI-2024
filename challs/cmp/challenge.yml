@@ -1,0 +1,31 @@
+name: "CMP"
+author: "Riggle"
+category: Rev
+
+description: |
+  *******(1) - Linux man page
+  Name
+  [REDACTED]
+
+  Synopsis
+  [REDACTED]
+
+  Description
+  For each file given, GNU...
+
+value: 50
+type: "standard"
+
+files: 
+  - cmp.tar.gz
+
+flags:
+  - dctf{b1n4ry_An4lysis_f0r_beginners}
+
+tags:
+  - rev
+  - easy
+
+state: visible
+
+version: "0.1"
