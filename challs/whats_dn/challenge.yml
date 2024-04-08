@@ -9,9 +9,11 @@ value: 150
 type: "standard"
 
 files:
-  - "chall.exe"
+  - "whats_dn.tar.gz"
+
 flags:
   - "dctf{oooh_1t_was_dnspy_all_al0ng!}"
+
 tags:
   - rev
   - medium
