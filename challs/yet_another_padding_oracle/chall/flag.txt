@@ -1,1 +1,1 @@
-dctf{did_you_think_you_would_get_away_with_using_a_simple_padbuster}
+dctf{hope_it_wasnt_too_slow}
