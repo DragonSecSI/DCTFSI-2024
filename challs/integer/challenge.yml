@@ -1,0 +1,22 @@
+name: "Integer"
+author: "Riggle"
+category: Pwn
+
+description: |
+  This is impossible! How do they expect me to produce
+value: 10
+type: "standard"
+
+files: 
+  - chall.c app/chall
+
+flags:
+  - dctf{1nteg3r_0v3rflow_gaming}
+
+tags:
+  - pwn
+  - baby
+
+state: visible
+
+version: "0.1"
