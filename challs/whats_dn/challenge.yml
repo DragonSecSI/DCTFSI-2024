@@ -1,0 +1,20 @@
+name: "What's DN?"
+author: "DragonSec SI"
+category: "Rev"
+
+description: |
+  No seriously, what kind of dn are you talking about...?
+
+value: 150
+type: "standard"
+
+files:
+  - "chall.exe"
+flags:
+  - "dctf{oooh_1t_was_dnspy_all_al0ng!}"
+tags:
+  - rev
+  - medium
+
+state: "visible"
+version: "0.1"
