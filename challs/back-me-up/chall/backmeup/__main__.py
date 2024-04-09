@@ -2,6 +2,8 @@ from backmeup.server import app
 import os
 from pathlib import Path
 from backmeup.util import init as db_init
+
+
 if __name__ == '__main__':
     app.secret_key = os.urandom(24).hex()
     app.config['SESSION_TYPE'] = 'filesystem'

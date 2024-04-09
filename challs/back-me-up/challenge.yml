@@ -1,5 +1,5 @@
-name: "Web template"
-author: "DragonSec SI"
+name: "Back-Me-Up"
+author: "aljazmedic"
 category: "Web"
 
 description: |
@@ -9,20 +9,22 @@ description: |
 
 connection_info: https://backmeup.dctf.si
 
+# TODO
 value: 500
 type: "dynamic"
 extra:
   initial: 500
   decay: 50
   minimum: 50
+# END TODO
 
 files:
-  - "shopping_list.zip"
+  - "dist.tar.gz"
 flags:
-  - "DCTF{template}"
+  - "dctf{d0_pR0p3r_p4th_v4l1d4t10n_493493a9d}"
 tags:
   - "web"
-  - "easy"
+  - "medium"
 
 state: "visible"
 version: "1.0"

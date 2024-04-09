@@ -12,6 +12,7 @@ import sqlite3
 from werkzeug.utils import secure_filename
 import bcrypt, os
 from backmeup.util import get_cursor, hash_password
+from pathlib import Path
 
 app = Flask(__name__)
 
@@ -64,7 +65,8 @@ def upload_file():
 
 @app.route("/uploads/<path:filename>", methods=["GET"])
 def uploaded_file(filename: str):
-    finalpath: str = (app.config["UPLOAD_FOLDER"] / filename).resolve().as_posix()
+    base_path:Path = app.config["UPLOAD_FOLDER"]
+    finalpath: str = (base_path / filename).resolve().as_posix()
     if not finalpath.startswith("/app/data"):  # Prevent path traversal
         return "Invalid path", 403
     if "flag.txt" in finalpath and session.get("admin") != 1:

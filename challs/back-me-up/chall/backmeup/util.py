@@ -26,8 +26,7 @@ def hash_password(p: str):
 
 
 def init(app):
-    project_root = Path(__file__).parent.parent
-    init_script = project_root / "sql/init.sql"
+    init_script = Path(__file__).parent / "sql/init.sql"
     sql = init_script.read_text()
 
     admin_user = f"admin_{os.urandom(24).hex()}"
