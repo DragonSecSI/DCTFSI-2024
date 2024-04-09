@@ -1,0 +1,28 @@
+name: "Web template"
+author: "DragonSec SI"
+category: "Web"
+
+description: |
+  Welcome to DragonSec SI's backmeup service!
+  You can backup any image you want here, but it has to be under 5MB.
+  Good think that it is open source: <LINK>
+
+connection_info: https://backmeup.dctf.si
+
+value: 500
+type: "dynamic"
+extra:
+  initial: 500
+  decay: 50
+  minimum: 50
+
+files:
+  - "shopping_list.zip"
+flags:
+  - "DCTF{template}"
+tags:
+  - "web"
+  - "easy"
+
+state: "visible"
+version: "1.0"

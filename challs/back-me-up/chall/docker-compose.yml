@@ -1,0 +1,12 @@
+services:
+  backmeup:
+    image: backmeup
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - FLAG=dctf{d0_pR0p3r_p4th_v4l1d4t10n_493493a9d}
+      - ADMIN_PASSWORD=tokyodrift # Rockyoupasswd
+    restart: always
