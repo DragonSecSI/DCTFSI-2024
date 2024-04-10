@@ -6,7 +6,7 @@ description: |
   Don't forget to pack the flag before you travel to the mooooon!🌔 The secrets lie in the dark side.
 connection_info: https://template.web.dctf.si
 
-value: 50
+value: 10
 type: "static"
 
 flags:
