@@ -10,9 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_FILES["avatar"]["error"] == 0) {
         $randfile = bin2hex(random_bytes(16));
         $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
-        if ($ext != "jpg" && $ext != "png" && $ext != "gif" && $ext != "jpeg") {
-            die("Invalid file type");
-        }
         $user["avatar"] = "media/$randfile.$ext";
         move_uploaded_file($_FILES["avatar"]["tmp_name"], $user["avatar"]);
     }

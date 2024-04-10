@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 if (!isset($title))
     $title = "";
 if (!isset($back))
@@ -11,7 +14,7 @@ require($back . "lib/prefs.php");
 $theme = get_pref("theme");
 
 $lang_code = get_pref("lang");
-require($back . "lang/$lang_code");
+require($back . "lang/$lang_code.php");
 
 ?>
 <!DOCTYPE html>

@@ -21,9 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="control">
         <div class="select">
             <select name="lang">
-                <option value="en.php" <?php if ($lang_code == 'en.php') echo 'selected' ?> >English (en)</option>
-                <option value="sl.php" <?php if ($lang_code == 'sl.php') echo 'selected' ?> >Slovenščina (sl)</option>
-                <option value="jarr.php" <?php if ($lang_code == 'jarr.php') echo 'selected' ?> >Pirate speak (jarr)</option>
+                <option value="en" <?php if ($lang_code == 'en') echo 'selected' ?> >English (en)</option>
+                <option value="sl" <?php if ($lang_code == 'sl') echo 'selected' ?> >Slovenščina (sl)</option>
+                <option value="jarr" <?php if ($lang_code == 'jarr') echo 'selected' ?> >Pirate speak (jarr)</option>
             </select>
         </div>
     </div>
