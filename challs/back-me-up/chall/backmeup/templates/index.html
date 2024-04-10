@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div>
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+    {% endif %} {% endwith %}
+    <h1>Welcome to the Back Me Up service.</h1>
+    <p>You can upload files <a href="/upload">here</a>.</p>
+    <p>
+      You can also <a href="/login">login</a> or
+      <a href="/register">register</a>.
+    </p>
+  </body>
+</html>

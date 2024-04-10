@@ -4,15 +4,9 @@
 
 // gcc -pie -fstack-protector -o app app.c
 
+char* magic_word = "/bin/sh\0";
+
 void set_helpers() {
-    asm("xor %rdi, %rdi");
-    asm("xor %rsi, %rsi");
-    asm("xor %rdx, %rdx");
-
-    asm("push %rdi");
-    asm("push %rsi");
-    asm("push %rdx");
-
     asm("pop %rdi");
     asm("ret");
     asm("pop %rsi");
@@ -27,7 +21,7 @@ void setup() {
     setbuf(stdout, 0);
 }
 
-void hospital(int social_security_number, int money, int magic_word) {
+void hospital(int social_security_number, int money, char* magic) {
     puts("Finally, hospital!");
     if (!social_security_number) {
         puts("No social security number provided.");
@@ -37,12 +31,8 @@ void hospital(int social_security_number, int money, int magic_word) {
         puts("Not enough money on your bank account, sorry!");
         exit(1);
     }
-    if (magic_word != 0x413a53) {
-        puts("Kindness goes a long way, my friend.");
-        exit(1);
-    }
     puts("Right this way, sir.");
-    system("/bin/sh");
+    system(magic);
     exit(0);
 }
 

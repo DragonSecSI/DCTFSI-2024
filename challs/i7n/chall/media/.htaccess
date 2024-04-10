@@ -1,0 +1,9 @@
+# Disable php execution
+<Files *.php>
+    deny from all
+</Files>
+# Blacklist files
+<Files ~ "(htaccess|flag.txt)$">
+    order allow,deny
+    deny from all
+</Files>
