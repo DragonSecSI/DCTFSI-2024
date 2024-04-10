@@ -10,7 +10,7 @@ value: 50
 type: "static"
 
 flags:
-  - "DCTF{p4ck3d_7h3_fl4g_10_7h3_m00n}"
+  - "dctf{p4ck3d_7h3_fl4g_10_7h3_m00n}"
 tags:
   - "web"
   - "baby"
