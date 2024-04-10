@@ -13,7 +13,8 @@ extra:
   decay: 50
   minimum: 50
 
-files: []
+files: 
+  - i7n.zip
 flags:
   - "dctf{formerly_known_as_x}"
 tags:
