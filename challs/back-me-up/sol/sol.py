@@ -3,7 +3,7 @@ import requests
 import tempfile
 import sqlite3
 
-url = "http://localhost:8000"
+url = "https://backmeup.dctf.si/"
 
 with requests.Session() as s:
     # Get the CSRF token

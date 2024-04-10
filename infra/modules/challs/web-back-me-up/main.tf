@@ -97,6 +97,11 @@ resource "kubernetes_deployment_v1" "deployment" {
             }
           }
 
+          env {
+            name  = "FLAG"
+            value = "dctf{d0_pR0p3r_p4th_v4l1d4t10n_493493a9d}"
+          }
+
           resources {
             limits = {
               cpu    = "0.3"

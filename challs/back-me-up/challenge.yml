@@ -5,18 +5,11 @@ category: "Web"
 description: |
   Welcome to DragonSec SI's backmeup service!
   You can backup any image you want here, but it has to be under 5MB.
-  Good think that it is open source: <LINK>
 
 connection_info: https://backmeup.dctf.si
 
-# TODO
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
-# END TODO
+value: 100
+type: "standard"
 
 files:
   - "dist.tar.gz"

@@ -4,14 +4,10 @@ category: "Web"
 
 description: |
   Elon sacked the security department again
-connection_info: https://i7n.web.dctf.si
+connection_info: https://i7n.dctf.si
 
-value: 500
-type: "dynamic"
-extra:
-  initial: 500
-  decay: 50
-  minimum: 50
+value: 150
+type: "standard"
 
 files: 
   - i7n.zip
@@ -19,7 +15,7 @@ flags:
   - "dctf{formerly_known_as_x}"
 tags:
   - "web"
-  - "easy"
+  - "hard"
 
 state: "visible"
 version: "1.0"
