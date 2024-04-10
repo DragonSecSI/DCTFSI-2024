@@ -10,8 +10,8 @@ from flask import (
 )
 import sqlite3
 from werkzeug.utils import secure_filename
-import bcrypt, os
-from backmeup.util import get_cursor, hash_password
+import os
+from backmeup.util import get_cursor
 from pathlib import Path
 
 app = Flask(__name__)
@@ -65,7 +65,7 @@ def upload_file():
 
 @app.route("/uploads/<path:filename>", methods=["GET"])
 def uploaded_file(filename: str):
-    base_path:Path = app.config["UPLOAD_FOLDER"]
+    base_path: Path = app.config["UPLOAD_FOLDER"]
     finalpath: str = (base_path / filename).resolve().as_posix()
     if not finalpath.startswith("/app/data"):  # Prevent path traversal
         return "Invalid path", 403
@@ -84,7 +84,7 @@ def login():
                 "SELECT username, password, is_admin FROM users WHERE username = ?",
                 (username,),
             ).fetchone()
-        if user and bcrypt.checkpw(password.encode(), user[1].encode()):
+        if user and (password.encode() == user[1].encode()):
             # Login successful
             session["admin"] = user[2]
             return redirect(url_for("index"))
@@ -99,12 +99,11 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        hashed_password = hash_password(password)
         try:
             with get_cursor(app) as cursor:
                 cursor.execute(
                     "INSERT INTO users (username, password, is_admin) VALUES (?, ?, 0)",
-                    (username, hashed_password),
+                    (username, password),
                 )
             return redirect(url_for("login"))
         except sqlite3.IntegrityError:

@@ -2,7 +2,6 @@ import sqlite3
 import os
 from contextlib import contextmanager
 from pathlib import Path
-import bcrypt
 
 DATABASE = "/app/database.sqlite3"
 
@@ -20,18 +19,12 @@ def get_cursor(app):
         conn.close()
 
 
-def hash_password(p: str):
-    salt = bcrypt.gensalt(rounds=10, prefix=b"2a")
-    return bcrypt.hashpw(p.encode(), salt).decode()
-
-
 def init(app):
     init_script = Path(__file__).parent / "sql/init.sql"
     sql = init_script.read_text()
 
-    admin_user = f"admin_{os.urandom(24).hex()}"
-    admin_password = os.environ["ADMIN_PASSWORD"]
-    admin_password = hash_password(admin_password)
+    admin_user = f"admin"
+    admin_password = os.urandom(24).hex()
 
     with get_cursor(app) as cursor:
         cursor.executescript(sql)

