@@ -4,11 +4,12 @@ category: "Web"
 
 description: |
   Don't forget to pack the flag before you travel to the mooooon!🌔 The secrets lie in the dark side.
-connection_info: https://template.web.dctf.si
+connection_info: https://packtheflag.dctf.si
 
 value: 10
-type: "static"
+type: "standard"
 
+files: []
 flags:
   - "dctf{p4ck3d_7h3_fl4g_10_7h3_m00n}"
 tags:

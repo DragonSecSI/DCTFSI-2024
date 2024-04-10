@@ -20,6 +20,7 @@ dockerize "pwn-gambler" "gambler"
 dockerize "librarians_revenge" "librariansrevenge"
 dockerize "yet_another_padding_oracle" "paddingoracle"
 
+dockerize "pack_the_flag" "packtheflag"
 dockerize "glasbenik/chall" "musix"
 dockerize "back-me-up/chall" "backmeup"
 dockerize "i7n" "i7n" "Dockerfile" "--build-arg FLAG=dctf{formerly_known_as_x}"
