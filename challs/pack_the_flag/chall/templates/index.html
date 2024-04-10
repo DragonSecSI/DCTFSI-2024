@@ -1,0 +1,65 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/moon-style.css') }}">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Take Me To The Moon Already Task List</h1>
+    <p> Dont forget to pack your flag (admin gets the flag for free)!</p>
+    <ul id="task-list">
+        {% for task in task_list %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+
+    <form id="task-form">
+        <input type="text" id="new-task" placeholder="Add a new task">
+	<button type="submit">Add Task</button>
+    </form>
+
+    <script>
+        document.getElementById('task-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var newTaskInput = document.getElementById('new-task');
+            var newTask = newTaskInput.value;
+            if (newTask.trim() !== '') {
+                // Add new task to the task list
+                var taskList = document.getElementById('task-list');
+                var newTaskElement = document.createElement('li');
+                newTaskElement.textContent = newTask;
+                taskList.appendChild(newTaskElement);
+                                // Update task list on the server
+                fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        task_list: Array.from(taskList.getElementsByTagName('li')).map(li => li.textContent), 
+					user: "user"
+                    })
+                }).then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to update task list');
+                    }
+                    else {
+                        return response.json();
+                    }
+                }).then(data => {
+                    console.log(data.message);
+                }).catch(error => {
+                    console.error(error);
+                });
+                // Clear input field
+                newTaskInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
+
