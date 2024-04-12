@@ -6,7 +6,7 @@ description: |
   Please return books back to the ROP chain section, or this librarian will poison you with tcache.
 connection_info: nc pwn.dctf.si 13372
 
-value: 150
+value: 200
 type: "standard"
 
 files:

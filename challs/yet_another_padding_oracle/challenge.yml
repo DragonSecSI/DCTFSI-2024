@@ -7,7 +7,7 @@ description: |
 
 connection_info: nc pwn.dctf.si 13370
 
-value: 150
+value: 200
 type: "standard"
 
 files:

@@ -1,0 +1,20 @@
+name: "Mazeception"
+author: "Zen"
+category: "Rev"
+
+description: |
+  Professor Slivnik has punished Zen for DDOSing government infrastructure! This year, he has locked him in 100,000 successive mazes. Seriously, don't save him.
+
+value: 200
+type: "standard"
+
+files:
+  - "mazeception.apk"
+flags:
+  - "dctf{s0lvd_100_000_m4zs_by_h4nd}"
+tags:
+  - "rev"
+  - "hard"
+
+state: "visible"
+version: "0.1"
