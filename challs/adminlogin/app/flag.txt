@@ -1,1 +1,1 @@
-ctf{pwn3d_your_f1rst_bin4ry}
+dctf{h0w_the_h3ll_D1d_you_get_H3r3???}
