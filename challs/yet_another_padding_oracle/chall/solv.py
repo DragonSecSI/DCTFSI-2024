@@ -1,7 +1,7 @@
 from pwn import remote, process, xor, unhex
 
 # io = process(["python3", "chall.py"])
-io = remote("localhost", 1337)
+io = remote("pwn.dctf.si", 13370)
 
 def oracle(ciphertext):
     io.sendlineafter(b"> ", b"3")
