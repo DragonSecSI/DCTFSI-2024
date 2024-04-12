@@ -1,0 +1,19 @@
+name: "Fort Knocks"
+author: "Luka Manojlovič"
+category: "Misc"
+
+description: |
+  I'm trying to get into Fort Knocks, but I can't bring down their door.
+
+value: 20
+
+files:
+  - "capture.pcapng"
+flags:
+  - "dctf{y0w_0wned_me_by_kn0cking}"
+tags:
+  - "misc"
+  - "easy"
+
+state: "visible"
+version: "0.1"
